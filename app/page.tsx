@@ -159,10 +159,9 @@ export default function Page() {
       <header className="site-header">
         <a className="brand" href="#inicio" aria-label="Frecuencia Divina 7, inicio"><span className="brand-mark">✦</span><span>FRECUENCIA<br /><em>DIVINA 7</em></span></a>
         <nav className={menuOpen ? 'main-nav is-open' : 'main-nav'} aria-label="Navegación principal">
-          <a href="#experiencia" onClick={() => setMenuOpen(false)}>La experiencia</a>
-          <a href="#recorrido" onClick={() => setMenuOpen(false)}>El recorrido</a>
-          <a href="#preguntas" onClick={() => setMenuOpen(false)}>Preguntas</a>
-          <button className="nav-login" onClick={() => setView('welcome')}>Ingresar <ArrowRight size={15} /></button>
+          <button className="nav-service" type="button" data-access="consultoria-individual" onClick={() => setMenuOpen(false)}>Consultoría individual</button>
+          <button className="nav-service" type="button" data-access="ensenanzas-alto-control" onClick={() => setMenuOpen(false)}>Enseñanzas de alto control</button>
+          <button className="nav-service" type="button" data-access="acelerador-abundancia" onClick={() => setMenuOpen(false)}>Acelerador de abundancia</button>
         </nav>
         <button className="mobile-menu" aria-label={menuOpen ? 'Cerrar menú' : 'Abrir menú'} onClick={() => setMenuOpen(!menuOpen)}>{menuOpen ? <X /> : <Menu />}</button>
       </header>
