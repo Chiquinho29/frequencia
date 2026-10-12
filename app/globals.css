@@ -74,6 +74,22 @@
   .reflection-note { display: block; margin-top: 20px; color: var(--gold-light); font-size: 11px; letter-spacing: .12em; text-transform: uppercase; }
   @media (max-width: 760px) { .daily-reflection { padding: 26px 20px; } .daily-reflection p { font-size: 18px; } }
 @media (max-width: 760px) { .practice-grid { grid-template-columns: 1fr; } .practice-card { min-height: 145px; } }
+
+.control-lead { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, .9fr); gap: clamp(34px, 7vw, 90px); align-items: center; background: #0d162d; }
+.control-lead-image { overflow: hidden; border: 1px solid rgba(214,180,106,.34); box-shadow: 0 24px 70px rgba(0,0,0,.28); }
+.control-lead-image img { display: block; width: 100%; aspect-ratio: 1 / 1; object-fit: cover; }
+.control-lead-copy h2 { margin: 26px 0 18px; color: var(--warm); font: 500 clamp(40px, 5vw, 68px)/.96 Georgia, serif; letter-spacing: -.06em; }
+.control-lead-copy h2 i { color: var(--gold-light); font-style: italic; }
+.control-lead-copy > p { max-width: 430px; color: var(--muted-night); font-size: 15px; line-height: 1.75; }
+.contact-form { margin-top: 30px; }
+.contact-form label { display: block; margin-bottom: 10px; color: var(--gold-light); font-size: 10px; letter-spacing: .14em; text-transform: uppercase; }
+.contact-form-row { display: flex; gap: 10px; }
+.contact-form input { min-width: 0; flex: 1; border: 1px solid rgba(241,220,167,.3); padding: 15px 14px; color: var(--warm); background: rgba(8,13,29,.8); outline: none; }
+.contact-form input:focus { border-color: var(--gold); box-shadow: 0 0 0 3px rgba(214,180,106,.12); }
+.contact-form input::placeholder { color: #778098; }
+.contact-form .gold-button { flex: 0 0 auto; margin: 0; padding: 14px 16px; }
+.contact-form small { display: block; margin-top: 12px; color: #778098; font-size: 11px; line-height: 1.5; }
+@media (max-width: 760px) { .control-lead { grid-template-columns: 1fr; padding-top: 70px; padding-bottom: 70px; } .control-lead-image { order: 2; } .control-lead-copy { order: 1; } .contact-form-row { flex-direction: column; } .contact-form .gold-button { justify-content: center; width: 100%; } }
 @import 'tw-animate-css';
 @import 'shadcn/tailwind.css';
 

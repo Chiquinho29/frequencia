@@ -1,6 +1,7 @@
 'use client'
 
 import { useEffect, useMemo, useState } from 'react'
+import type { FormEvent } from 'react'
 import { AudioGenerator } from '@/components/audio-generator'
 import { VideoLinks } from '@/components/video-links'
 import {
@@ -137,10 +138,19 @@ export default function Page() {
   const [playing, setPlaying] = useState(false)
   const [completed, setCompleted] = useState<number[]>([1, 2, 3])
   const [faq, setFaq] = useState<number | null>(0)
+  const [contactEmail, setContactEmail] = useState('')
+  const [contactSent, setContactSent] = useState(false)
   const progress = Math.round((completed.length / 30) * 100)
   const selectedMeditation = meditations[selectedDay - 1]
   const stage = selectedDay <= 7 ? stages[0] : selectedDay <= 14 ? stages[1] : selectedDay <= 21 ? stages[2] : stages[3]
   const dayLabel = useMemo(() => String(selectedDay).padStart(2, '0'), [selectedDay])
+  const submitContact = (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault()
+    const subject = encodeURIComponent('Interesse en Enseñanzas de Alto Control')
+    const body = encodeURIComponent(`Hola, quiero recibir más información sobre Enseñanzas de Alto Control. Mi correo es: ${contactEmail}`)
+    window.location.href = `mailto:frecuenciadivina007@gmail.com?subject=${subject}&body=${body}`
+    setContactSent(true)
+  }
 
   useEffect(() => {
     if (view === 'app') setReflectionOpen(false)
@@ -160,7 +170,7 @@ export default function Page() {
         <a className="brand" href="#inicio" aria-label="Frecuencia Divina 7, inicio"><span className="brand-mark">✦</span><span>FRECUENCIA<br /><em>DIVINA 7</em></span></a>
         <nav className={menuOpen ? 'main-nav is-open' : 'main-nav'} aria-label="Navegación principal">
           <a className="nav-service" href="/consultoria-individual" data-access="consultoria-individual" onClick={() => setMenuOpen(false)}>Consultoría individual</a>
-          <button className="nav-service" type="button" data-access="ensenanzas-alto-control" onClick={() => setMenuOpen(false)}>Enseñanzas de alto control</button>
+          <a className="nav-service" href="#ensenanzas-alto-control" data-access="ensenanzas-alto-control" onClick={() => setMenuOpen(false)}>Enseñanzas de alto control</a>
           <button className="nav-service" type="button" data-access="acelerador-abundancia" onClick={() => setMenuOpen(false)}>Acelerador de abundancia</button>
         </nav>
         <button className="mobile-menu" aria-label={menuOpen ? 'Cerrar menú' : 'Abrir menú'} onClick={() => setMenuOpen(!menuOpen)}>{menuOpen ? <X /> : <Menu />}</button>
@@ -193,6 +203,20 @@ export default function Page() {
       <section className="included-section"><div className="section-wrap included-grid"><div className="celestial-disc"><Headphones size={34} strokeWidth={1} /><span>30<br /><small>prácticas</small></span></div><div><div className="section-kicker">04 / Tu espacio</div><h2>Todo lo que necesitas<br /><i>para estar presente.</i></h2><ul className="check-list"><li><Check /> 30 meditaciones guiadas de 7 minutos</li><li><Check /> Diario personal para integrar tu experiencia</li><li><Check /> Calendario de progreso y pequeños rituales</li><li><Check /> Un espacio privado que crece contigo</li></ul><button className="text-button" onClick={() => setView('welcome')}>Explorar mi espacio <ArrowRight size={16} /></button></div></div></section>
 
       <section className="faq-section section-wrap" id="preguntas"><div className="section-kicker">05 / Preguntas frecuentes</div><div className="faq-grid"><h2>Antes de<br /><i>comenzar.</i></h2><div>{['¿Cómo funciona el programa?', '¿Cuánto dura cada meditación?', '¿Puedo repetir una práctica?', '¿Puedo acceder desde mi celular?'].map((q, i) => <div className="faq-item" key={q}><button onClick={() => setFaq(faq === i ? null : i)} aria-expanded={faq === i}><span>{q}</span>{faq === i ? <ChevronDown /> : <ChevronRight />}</button>{faq === i && <p>{i === 0 ? 'Durante 30 días encontrarás una práctica guiada de siete minutos. Puedes hacerla cuando quieras y avanzar a tu propio ritmo.' : i === 1 ? 'Cada meditación dura aproximadamente siete minutos, para que puedas crear un ritual posible incluso en los días más ocupados.' : i === 2 ? 'Sí. Repetir una práctica puede ser una forma hermosa de profundizar en lo que necesitas hoy.' : 'Sí. La experiencia está diseñada para acompañarte desde cualquier dispositivo.'}</p>}</div>)}</div></div></section>
+
+      <section className="control-lead section-wrap" id="ensenanzas-alto-control">
+        <div className="control-lead-image"><img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Encinamientos%20de%20Alto%20Control-oOfyXRxXy5uzWF0XyWZSzC6Ctz9sPx.png" alt="Cerebro iluminado representando las Enseñanzas de Alto Control" /></div>
+        <div className="control-lead-copy">
+          <div className="section-kicker">Enseñanzas de alto control</div>
+          <h2>Eleva tu mente.<br /><i>Expande tu realidad.</i></h2>
+          <p>Déjanos tu correo y nos pondremos en contacto contigo para compartirte todos los detalles.</p>
+          <form className="contact-form" onSubmit={submitContact}>
+            <label htmlFor="contact-email">Tu correo electrónico</label>
+            <div className="contact-form-row"><input id="contact-email" name="email" type="email" required value={contactEmail} onChange={(event) => { setContactEmail(event.target.value); setContactSent(false) }} placeholder="tu@email.com" /><button className="gold-button" type="submit">Quiero información <ArrowRight size={17} /></button></div>
+            <small>{contactSent ? 'Se abrió tu cliente de correo para completar el envío.' : 'Te contactaremos personalmente. Sin spam.'}</small>
+          </form>
+        </div>
+      </section>
 
       <section className="final-cta"><Stars /><div className="section-kicker">Tu momento comienza aquí</div><h2>Siete minutos pueden<br /><i>cambiar tu día.</i></h2><p>Haz espacio para la calma. Tu luz ya está ahí.</p><button className="gold-button" onClick={() => setView('welcome')}>Comenzar mi experiencia <ArrowRight size={17} /></button></section>
       <footer className="site-footer"><a className="brand" href="#inicio"><span className="brand-mark">✦</span><span>FRECUENCIA<br /><em>DIVINA 7</em></span></a><p>Un espacio para volver a ti.</p><div><a href="#preguntas">Ayuda</a><a href="#">Privacidad</a><a href="#">Términos</a></div></footer>
