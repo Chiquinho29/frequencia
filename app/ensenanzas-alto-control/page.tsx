@@ -36,6 +36,12 @@ export default function EnseñanzasAltoControlPage() {
         <a className="control-back" href="/">Volver al inicio <ArrowRight /></a>
       </header>
 
+      <section className="purchase-welcome section-wrap" aria-labelledby="purchase-welcome-title">
+        <p className="section-kicker">Tu acceso está confirmado</p>
+        <h2 id="purchase-welcome-title">¡FELICIDADES!<br /><i>ACABAS DE ADQUIRIRLO</i></h2>
+        <p>Ahora solo tienes que seguir los pasos que aparecen a continuación.</p>
+      </section>
+
       <section className="control-hero section-wrap">
         <div className="control-hero-copy">
           <p className="eyebrow">Un espacio para expandir tu mirada</p>

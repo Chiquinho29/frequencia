@@ -227,6 +227,10 @@ a { color: inherit; text-decoration: none; }
 .control-header { background: rgba(8, 13, 29, .82); }
 .control-back { display: inline-flex; align-items: center; gap: 10px; color: var(--gold-light); font-size: 10px; letter-spacing: .14em; text-transform: uppercase; }
 .control-back svg { width: 15px; }
+.purchase-welcome { max-width: 1040px; padding-top: 72px; padding-bottom: 12px; text-align: center; }
+.purchase-welcome h2 { margin: 18px 0 14px; color: var(--warm); font: 500 clamp(38px, 5vw, 64px)/.94 Georgia, serif; letter-spacing: -.06em; }
+.purchase-welcome h2 i { color: var(--gold-light); font-style: italic; }
+.purchase-welcome > p:last-child { margin: 0 auto; color: var(--muted-night); font-size: 15px; line-height: 1.7; }
 .control-hero { display: grid; grid-template-columns: minmax(0, .9fr) minmax(360px, .8fr); gap: clamp(38px, 8vw, 110px); align-items: center; padding-top: 100px; padding-bottom: 110px; }
 .control-hero-copy h1 { margin: 28px 0 25px; font: 500 clamp(48px, 7vw, 102px)/.86 Georgia, serif; letter-spacing: -.07em; }
 .control-hero-copy h1 i, .control-contact h2 i, .control-final h2 i { color: var(--gold-light); font-style: italic; }
