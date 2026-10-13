@@ -162,7 +162,7 @@ export default function Page() {
         <nav className={menuOpen ? 'main-nav is-open' : 'main-nav'} aria-label="Navegación principal">
           <a className="nav-service" href="/ensenanzas-alto-control" data-access="ensenanzas-alto-control" onClick={() => setMenuOpen(false)}>Enseñanzas de alto control</a>
           <a className="nav-service" href="/consultoria-individual" data-access="consultoria-individual" onClick={() => setMenuOpen(false)}>Consultoría individual</a>
-          <button className="nav-service" type="button" data-access="acelerador-abundancia" onClick={() => setMenuOpen(false)}>Acelerador de abundancia</button>
+          <a className="nav-service" href="/acelerador-abundancia" data-access="acelerador-abundancia" onClick={() => setMenuOpen(false)}>Acelerador de abundancia</a>
         </nav>
         <button className="mobile-menu" aria-label={menuOpen ? 'Cerrar menú' : 'Abrir menú'} onClick={() => setMenuOpen(!menuOpen)}>{menuOpen ? <X /> : <Menu />}</button>
       </header>
