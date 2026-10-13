@@ -160,6 +160,7 @@ export default function Page() {
       <header className="site-header">
         <a className="brand" href="#inicio" aria-label="Frecuencia Divina 7, inicio"><span className="brand-mark">✦</span><span>FRECUENCIA<br /><em>DIVINA 7</em></span></a>
         <nav className={menuOpen ? 'main-nav is-open' : 'main-nav'} aria-label="Navegación principal">
+          <a className="nav-service" href="/ensenanzas-alto-control" data-access="ensenanzas-alto-control" onClick={() => setMenuOpen(false)}>Enseñanzas de alto control</a>
           <a className="nav-service" href="/consultoria-individual" data-access="consultoria-individual" onClick={() => setMenuOpen(false)}>Consultoría individual</a>
           <button className="nav-service" type="button" data-access="acelerador-abundancia" onClick={() => setMenuOpen(false)}>Acelerador de abundancia</button>
         </nav>
