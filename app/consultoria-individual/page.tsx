@@ -21,6 +21,12 @@ export default function ConsultoriaIndividualPage() {
         <a className="back-home" href="/"><ArrowLeft size={15} /> Volver al inicio</a>
       </header>
 
+      <section className="consultoria-welcome section-consultoria" aria-labelledby="consultoria-welcome-title">
+        <p className="consultoria-eyebrow">Tu acceso está confirmado</p>
+        <h2 id="consultoria-welcome-title">¡FELICIDADES!<br /><em>ACABAS DE ADQUIRIRLO</em></h2>
+        <p>Ahora solo tienes que seguir los pasos que aparecen a continuación.</p>
+      </section>
+
       <section className="consultoria-hero section-consultoria">
         <div className="consultoria-hero-copy">
           <p className="consultoria-eyebrow">Un encuentro · Un espacio · Tú</p>
