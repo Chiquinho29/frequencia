@@ -43,7 +43,7 @@ export default function EnseñanzasAltoControlPage() {
           <p className="control-subtitle">Descubre una nueva perspectiva sobre el poder de tu mente, tu conciencia y tu capacidad de transformación.</p>
           <p>Existen conocimientos que nos invitan a mirar más allá de lo cotidiano y comprender con mayor profundidad nuestra propia realidad.</p>
         </div>
-        <div className="control-hero-image"><img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-rhKrMJe1AgVg8IBHU0HmVOlOUEIful.png" alt="Cerebro iluminado con energía dorada y azul" /></div>
+        <div className="control-hero-image"><img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Encinamientos%20de%20Alto%20Control-k8cLVs985W1TTLEOd8A0Luk2dZxjw7.png" alt="Cerebro iluminado con energía dorada y azul" /></div>
       </section>
 
       <section className="control-intro section-wrap">
