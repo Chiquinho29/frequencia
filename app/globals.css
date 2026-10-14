@@ -144,11 +144,14 @@ a { color: inherit; text-decoration: none; }
 .video-link-button:hover, .video-link-button:focus-visible { background: var(--gold-light); outline: none; }
 .video-link-button b { font-size: 16px; font-weight: 400; }
 @media (max-width: 760px) {
-  .site-header, .app-header { height: 68px; padding: 0 18px; }
-  .main-nav { top: 68px; padding: 20px 18px 24px; gap: 20px; }
+  .site-header { height: auto; min-height: 68px; padding: 0 18px; flex-wrap: wrap; }
+  .app-header { height: 68px; padding: 0 18px; }
+  .main-nav { position: static; order: 3; display: flex; width: 100%; justify-content: space-between; gap: 6px; padding: 10px 0 12px; border-top: 1px solid rgba(214,180,106,.22); font-size: 8px; letter-spacing: .07em; }
+  .main-nav .nav-service { flex: 1; min-width: 0; padding: 9px 6px; border: 1px solid rgba(214,180,106,.5); color: var(--gold-light); background: rgba(214,180,106,.12); text-align: center; line-height: 1.35; }
+  .main-nav .nav-service:hover, .main-nav .nav-service:focus-visible { border-color: var(--gold-light); color: var(--night); background: var(--gold); outline: none; }
   .brand { gap: 8px; font-size: 8px; letter-spacing: .16em; }
   .brand-mark { font-size: 21px; }
-  .mobile-menu { padding: 8px; }
+  .mobile-menu { display: none; }
   .mobile-menu svg { width: 22px; height: 22px; }
   .hero { min-height: 720px; padding: 74px 22px 86px; }
   .hero-copy { max-width: 100%; }
