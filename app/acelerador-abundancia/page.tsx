@@ -32,6 +32,12 @@ export default function AceleradorAbundanciaPage() {
         <a className="abundance-back" href="/">Volver al inicio <ArrowRight size={15} /></a>
       </header>
 
+      <section className="abundance-welcome" aria-label="Confirmación de adquisición">
+        <p className="abundance-welcome-kicker">¡FELICIDADES!</p>
+        <h2>Acabas de adquirir el Acelerador de Abundancia.</h2>
+        <p>Ahora solo tienes que seguir los pasos que aparecen a continuación.</p>
+      </section>
+
       <section className="abundance-hero">
         <div className="abundance-hero-glow" aria-hidden="true" />
         <div className="abundance-hero-copy">
@@ -40,8 +46,8 @@ export default function AceleradorAbundanciaPage() {
           <p className="abundance-tagline">Despierta tu potencial y descubre nuevas posibilidades para tu vida.</p>
           <p className="abundance-intro">Bienvenido al Acelerador de Abundancia, una experiencia creada para quienes desean desarrollar una mentalidad de crecimiento, explorar nuevas perspectivas y fortalecer su conexión con sus objetivos personales.</p>
         </div>
-        <div className="abundance-image-placeholder" aria-label="Espacio reservado para la imagen de la experiencia">
-          <span>Tu imagen<br /><i>próximamente</i></span>
+        <div className="abundance-image-placeholder">
+          <img src="/acelerador-abundancia.png" alt="Árbol dorado de abundancia sobre un libro abierto" />
         </div>
       </section>
 
