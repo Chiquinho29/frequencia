@@ -96,6 +96,10 @@
 .abundance-nav { display: flex; gap: clamp(18px, 3vw, 44px); color: #c6cada; font-size: 10px; letter-spacing: .13em; text-transform: uppercase; }
 .abundance-nav a:hover, .abundance-back:hover { color: var(--gold-light); }
 .abundance-back { display: inline-flex; align-items: center; gap: 8px; color: var(--gold-light); font-size: 10px; letter-spacing: .13em; text-transform: uppercase; }
+.abundance-welcome { max-width: 1200px; margin: 0 auto; padding: 52px clamp(24px, 6vw, 80px) 0; }
+.abundance-welcome-kicker { margin: 0 0 12px; color: var(--gold); font-size: 10px; font-weight: 700; letter-spacing: .2em; }
+.abundance-welcome h2 { max-width: 720px; margin: 0 0 10px; color: var(--warm); font: 500 clamp(28px, 4vw, 52px)/.98 Georgia, serif; letter-spacing: -.04em; }
+.abundance-welcome > p:last-child { margin: 0; color: var(--muted-night); font-size: 14px; line-height: 1.6; }
 .abundance-hero { position: relative; display: grid; grid-template-columns: minmax(0, 1fr) minmax(300px, .72fr); gap: clamp(40px, 8vw, 120px); align-items: center; max-width: 1200px; min-height: 650px; margin: auto; padding: 90px clamp(24px, 6vw, 80px); }
 .abundance-hero-copy { position: relative; z-index: 1; max-width: 620px; }
 .abundance-hero .eyebrow { display: flex; align-items: center; gap: 8px; }
@@ -104,6 +108,7 @@
 .abundance-tagline { max-width: 520px; color: var(--gold-light); font: 24px/1.3 Georgia, serif; }
 .abundance-intro, .abundance-heading > p, .access-card p { max-width: 540px; color: var(--muted-night); font-size: 14px; line-height: 1.75; }
 .abundance-image-placeholder { position: relative; display: grid; place-items: center; aspect-ratio: 1 / 1.08; overflow: hidden; border: 1px solid rgba(241,220,167,.4); background: radial-gradient(circle at 50% 38%, rgba(214,180,106,.2), transparent 34%), linear-gradient(145deg, #172747, #080d1d); box-shadow: 0 25px 75px rgba(0,0,0,.35); color: var(--gold-light); text-align: center; font: 28px/1.15 Georgia, serif; }
+.abundance-image-placeholder img { display: block; width: 100%; height: 100%; object-fit: cover; }
 .abundance-image-placeholder::before, .abundance-image-placeholder::after { content: ''; position: absolute; border: 1px solid rgba(241,220,167,.24); border-radius: 50%; transform: rotate(-35deg) scaleX(.5); }
 .abundance-image-placeholder::before { inset: 12%; height: 70%; }.abundance-image-placeholder::after { inset: 4%; height: 80%; transform: rotate(55deg) scaleX(.42); }.abundance-image-placeholder i { color: var(--gold); font-size: 18px; }
 .abundance-discovery { padding-top: 80px; padding-bottom: 110px; }.abundance-heading { display: grid; grid-template-columns: 1fr 1fr; gap: 10%; align-items: end; margin: 40px 0 60px; }.abundance-heading h2 { margin: 0; font: 500 clamp(44px, 6vw, 78px)/.92 Georgia, serif; letter-spacing: -.06em; }.discovery-grid { display: grid; grid-template-columns: repeat(3, 1fr); border-top: 1px solid var(--line); }.discovery-card { display: flex; flex-direction: column; gap: 42px; min-height: 250px; padding: 25px 28px 15px 0; border-right: 1px solid var(--line); margin-right: 28px; }.discovery-card:last-child { border: 0; margin-right: 0; }.discovery-card > span { color: var(--gold); font-size: 11px; letter-spacing: .15em; }.discovery-card h3 { margin: 0 0 12px; color: var(--warm); font: 22px Georgia, serif; }.discovery-card p { margin: 0; color: var(--muted-night); font-size: 13px; line-height: 1.65; }.discovery-card svg { color: var(--gold); width: 18px; }
@@ -139,11 +144,14 @@ a { color: inherit; text-decoration: none; }
 .video-link-button:hover, .video-link-button:focus-visible { background: var(--gold-light); outline: none; }
 .video-link-button b { font-size: 16px; font-weight: 400; }
 @media (max-width: 760px) {
-  .site-header, .app-header { height: 68px; padding: 0 18px; }
-  .main-nav { top: 68px; padding: 20px 18px 24px; gap: 20px; }
+  .site-header { height: auto; min-height: 68px; padding: 0 18px; flex-wrap: wrap; }
+  .app-header { height: 68px; padding: 0 18px; }
+  .main-nav { position: static; order: 3; display: flex; width: 100%; justify-content: space-between; gap: 6px; padding: 10px 0 12px; border-top: 1px solid rgba(214,180,106,.22); font-size: 8px; letter-spacing: .07em; }
+  .main-nav .nav-service { flex: 1; min-width: 0; padding: 9px 6px; border: 1px solid rgba(214,180,106,.5); color: var(--gold-light); background: rgba(214,180,106,.12); text-align: center; line-height: 1.35; }
+  .main-nav .nav-service:hover, .main-nav .nav-service:focus-visible { border-color: var(--gold-light); color: var(--night); background: var(--gold); outline: none; }
   .brand { gap: 8px; font-size: 8px; letter-spacing: .16em; }
   .brand-mark { font-size: 21px; }
-  .mobile-menu { padding: 8px; }
+  .mobile-menu { display: none; }
   .mobile-menu svg { width: 22px; height: 22px; }
   .hero { min-height: 720px; padding: 74px 22px 86px; }
   .hero-copy { max-width: 100%; }
