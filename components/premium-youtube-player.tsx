@@ -21,7 +21,7 @@ export function PremiumYouTubePlayer({ url, title }: { url: string; title: strin
     <div className="premium-youtube-player" aria-label={`Reproductor de ${title}`}>
       {!loaded && <div className="youtube-loading" aria-live="polite">Cargando meditación…</div>}
       <iframe
-        src={`https://www.youtube.com/embed/${videoId}?playsinline=1&controls=1&rel=0&enablejsapi=1`}
+        src={`https://www.youtube.com/embed/${videoId}?playsinline=1&controls=0&rel=0&modestbranding=1`}
         title={title}
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
         allowFullScreen

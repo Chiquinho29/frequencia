@@ -16,7 +16,19 @@ export function VideoLinks({ titles, descriptions }: { titles: string[]; descrip
     <h2 id="video-links-title">TUS 30 MEDITACIONES<br /><i>EN VIDEO</i></h2>
     <p className="video-links-intro">Elige una meditación y reprodúcela aquí mismo. Cada video corresponde a su día del recorrido.</p>
     <div className="selected-video-area" id="selected-video-area" tabIndex={-1}>
-      <PremiumYouTubePlayer url={videoLinks[selected]} title={selectedTitle} />
+      <div className="video-player-with-arrows">
+        <button className="video-arrow video-arrow-prev" type="button" onClick={() => {
+          const next = selected === 0 ? videoLinks.length - 1 : selected - 1
+          setSelected(next)
+          requestAnimationFrame(() => document.getElementById('selected-video-area')?.scrollIntoView({ behavior: 'smooth', block: 'center' }))
+        }} aria-label="Meditación anterior">←</button>
+        <PremiumYouTubePlayer url={videoLinks[selected]} title={selectedTitle} />
+        <button className="video-arrow video-arrow-next" type="button" onClick={() => {
+          const next = selected === videoLinks.length - 1 ? 0 : selected + 1
+          setSelected(next)
+          requestAnimationFrame(() => document.getElementById('selected-video-area')?.scrollIntoView({ behavior: 'smooth', block: 'center' }))
+        }} aria-label="Siguiente meditación">→</button>
+      </div>
       <div className="selected-video-copy"><span>DÍA {String(selected + 1).padStart(2, '0')}</span><h3>{selectedTitle}</h3><p>{descriptions?.[selected] || 'Una práctica guiada para acompañar tu proceso con calma y presencia.'}</p></div>
     </div>
     <div className="video-links-grid" aria-label="Seleccionar meditación">
