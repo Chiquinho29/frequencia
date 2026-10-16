@@ -1,20 +1,31 @@
 'use client'
 
+import { useState } from 'react'
+import { PremiumYouTubePlayer } from '@/components/premium-youtube-player'
+
 const videoLinks = [
-  'https://www.youtube.com/watch?v=kYRUqjVDF8I', 'https://www.youtube.com/watch?v=mI3ziH9EpxY', 'https://www.youtube.com/watch?v=gbw4aAL5zDQ', 'https://www.youtube.com/watch?v=9J6Qph-7vLA', 'https://www.youtube.com/watch?v=8rCQuMLW70g', 'https://www.youtube.com/watch?v=4oEPnVOqzr0', 'https://www.youtube.com/watch?v=lFixjPkfMp0', 'https://www.youtube.com/watch?v=z9gTIX2emls', 'https://www.youtube.com/watch?v=O3xHKoxUG1U', 'https://www.youtube.com/watch?v=sy0lyW-6-FI', 'https://www.youtube.com/watch?v=WCACcgpO3Hc', 'https://www.youtube.com/watch?v=EnIfZBPt3gE', 'https://www.youtube.com/watch?v=U-7yCtxi-sg', 'https://www.youtube.com/watch?v=SCw6Exn884U', 'https://www.youtube.com/watch?v=GB-z8xrRkV4', 'https://www.youtube.com/watch?v=UbQz6SpOguo', 'https://www.youtube.com/watch?v=6wjzZTYhXy0', 'https://www.youtube.com/watch?v=55pgr8HPg1g', 'https://www.youtube.com/watch?v=nd7Jy0OEtyE', 'https://www.youtube.com/watch?v=uWcrS18CsQw', 'https://www.youtube.com/watch?v=-ElAmReMfa4', 'https://www.youtube.com/watch?v=RTLWsi7P-Eo', 'https://www.youtube.com/watch?v=W_tT7slViYg', 'https://www.youtube.com/watch?v=KxRpK9ZGq4Y', 'https://www.youtube.com/watch?v=_M4AoR6ZEKw', 'https://youtu.be/1_wsuOzDuhg', 'https://www.youtube.com/watch?v=TkEVsYmQiAM', 'https://youtu.be/OA-Uae1qmns', 'https://youtu.be/xkHUKLYjmWM', 'https://youtu.be/8TAFzDNa20U?is=j18S_HGhRMVRoiw7',
+  'https://youtube.com/watch?v=AYrqrmvm3us', 'https://youtu.be/gpJrmutDCPc', 'https://youtu.be/VgyftYGODhw', 'https://youtu.be/jbfAg54moRQ', 'https://youtu.be/3hkq6fd0gn4', 'https://youtu.be/sxC3pe8T_R8', 'https://youtu.be/a0_TvxdxRu8', 'https://youtu.be/Skj3TYYcEyI', 'https://youtu.be/oZgGLgINUto', 'https://youtu.be/TCDTeFbapwU', 'https://youtu.be/Hc-Uv3CH39s', 'https://youtu.be/J9FeBBCkg8o', 'https://youtu.be/XpTXWmSeC64', 'https://youtu.be/CHAv2KgZNaM', 'https://youtu.be/rSI-TyoKLuU', 'https://youtu.be/uM8Dd6oIwJo', 'https://youtu.be/93uWhKquLw0', 'https://youtu.be/LcbysVitODg', 'https://youtu.be/dPnjlksmAvo', 'https://www.youtube.com/watch?v=jTyxeMzBxY8', 'https://www.youtube.com/watch?v=4LP28e3h_ck', 'https://www.youtube.com/watch?v=cYXKqQcsv1M', 'https://www.youtube.com/watch?v=UrYZBsmbp2Q', 'https://www.youtube.com/watch?v=Pkv1Nqm8NxY', 'https://www.youtube.com/watch?v=NlW7WD0tQ5o', 'https://www.youtube.com/watch?v=pIBQinQpZ7U', 'https://www.youtube.com/watch?v=bVrv2s2WOtw', 'https://www.youtube.com/watch?v=WMoS64j0ZgE', 'https://www.youtube.com/watch?v=ABveLtmYcMk', 'https://www.youtube.com/watch?v=EYWGl3CMwY0',
 ]
 
-export function VideoLinks({ titles }: { titles: string[] }) {
-  return <section className="video-links-panel" aria-labelledby="video-links-title">
-    <div className="section-kicker">Complemento · Paz interior y abundancia</div>
+export function VideoLinks({ titles, descriptions }: { titles: string[]; descriptions?: string[] }) {
+  const [selected, setSelected] = useState(0)
+  const selectedTitle = titles[selected] || `Meditación del día ${String(selected + 1).padStart(2, '0')}`
+
+  return <section className="video-links-panel" aria-labelledby="video-links-title" id="meditaciones-video">
+    <div className="section-kicker">04 / Tu espacio premium</div>
     <h2 id="video-links-title">TUS 30 MEDITACIONES<br /><i>EN VIDEO</i></h2>
-    <p className="video-links-intro">Cada día, acompaña tu lectura con una meditación para cultivar la paz interior, el equilibrio emocional y una mentalidad de abundancia.</p>
-    <div className="video-links-grid">
-      {videoLinks.map((url, index) => <article className="video-link-card" key={url}>
-        <span>DÍA {index + 1}</span>
-        <h3>{titles[index]}</h3>
-        <p>Meditación complementaria</p>
-        <a className="video-link-button" href={url} target="_blank" rel="noopener noreferrer">Ver meditación <b aria-hidden="true">↗</b></a>
+    <p className="video-links-intro">Elige una meditación y reprodúcela aquí mismo. Cada video corresponde a su día del recorrido.</p>
+    <div className="selected-video-area" id="selected-video-area" tabIndex={-1}>
+      <PremiumYouTubePlayer url={videoLinks[selected]} title={selectedTitle} />
+      <div className="selected-video-copy"><span>DÍA {String(selected + 1).padStart(2, '0')}</span><h3>{selectedTitle}</h3><p>{descriptions?.[selected] || 'Una práctica guiada para acompañar tu proceso con calma y presencia.'}</p></div>
+    </div>
+    <div className="video-links-grid" aria-label="Seleccionar meditación">
+      {videoLinks.map((url, index) => <article className={`video-link-card${selected === index ? ' is-selected' : ''}`} key={`${url}-${index}`}>
+        <div><span>DÍA {String(index + 1).padStart(2, '0')}</span><h3>{titles[index]}</h3><p>{descriptions?.[index] || 'Meditación complementaria'}</p></div>
+        <button className="video-link-button" type="button" onClick={() => {
+          setSelected(index)
+          requestAnimationFrame(() => document.getElementById('selected-video-area')?.scrollIntoView({ behavior: 'smooth', block: 'center' }))
+        }} aria-pressed={selected === index}>Ver meditación <b aria-hidden="true">→</b></button>
       </article>)}
     </div>
   </section>
