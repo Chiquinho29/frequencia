@@ -15,14 +15,17 @@ export function VideoLinks({ titles, descriptions }: { titles: string[]; descrip
     <div className="section-kicker">04 / Tu espacio premium</div>
     <h2 id="video-links-title">TUS 30 MEDITACIONES<br /><i>EN VIDEO</i></h2>
     <p className="video-links-intro">Elige una meditación y reprodúcela aquí mismo. Cada video corresponde a su día del recorrido.</p>
-    <div className="selected-video-area">
+    <div className="selected-video-area" id="selected-video-area" tabIndex={-1}>
       <PremiumYouTubePlayer url={videoLinks[selected]} title={selectedTitle} />
       <div className="selected-video-copy"><span>DÍA {String(selected + 1).padStart(2, '0')}</span><h3>{selectedTitle}</h3><p>{descriptions?.[selected] || 'Una práctica guiada para acompañar tu proceso con calma y presencia.'}</p></div>
     </div>
     <div className="video-links-grid" aria-label="Seleccionar meditación">
       {videoLinks.map((url, index) => <article className={`video-link-card${selected === index ? ' is-selected' : ''}`} key={`${url}-${index}`}>
         <div><span>DÍA {String(index + 1).padStart(2, '0')}</span><h3>{titles[index]}</h3><p>{descriptions?.[index] || 'Meditación complementaria'}</p></div>
-        <button className="video-link-button" type="button" onClick={() => setSelected(index)} aria-pressed={selected === index}>Ver meditación <b aria-hidden="true">→</b></button>
+        <button className="video-link-button" type="button" onClick={() => {
+          setSelected(index)
+          requestAnimationFrame(() => document.getElementById('selected-video-area')?.scrollIntoView({ behavior: 'smooth', block: 'center' }))
+        }} aria-pressed={selected === index}>Ver meditación <b aria-hidden="true">→</b></button>
       </article>)}
     </div>
   </section>
