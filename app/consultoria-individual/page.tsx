@@ -34,7 +34,7 @@ export default function ConsultoriaIndividualPage() {
           <p className="consultoria-lead">Conectemos de una manera más cercana y personal.</p>
           <a className="consultoria-gold-button" href="#contacto">Quiero dar el primer paso <ArrowUpRight size={17} /></a>
         </div>
-        <div className="consultoria-portrait-wrap"><img src="/consultoria-individual.png" alt="Consultoría individual" /></div>
+        <div className="consultoria-portrait-wrap"><img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/df7bc775-d6cc-4886-b1fb-89a99d94cc7c-GtViUc1UkVmMHGxBWmjHKJpjCGt5wu.png" alt="Consultoría Individual en un espacio de conversación y orientación" /></div>
       </section>
 
       <section className="consultoria-intro section-consultoria">
