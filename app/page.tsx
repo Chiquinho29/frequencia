@@ -44,7 +44,7 @@ export default function Page() {
         <button className="mobile-menu" aria-label={menuOpen ? 'Cerrar menú' : 'Abrir menú'} onClick={() => setMenuOpen(!menuOpen)}>{menuOpen ? <X /> : <Menu />}</button>
       </header>
       <section className="saint-hero">
-        <div className="saint-hero-image"><img src={saintBenedictImage} alt="Consultoría Individual, un encuentro y espacio personal" /></div>
+        <div className="saint-hero-image"><img src={saintBenedictImage} alt="San Benito con la cruz y la Regla de San Benito" /></div>
         <div className="saint-hero-copy"><p className="eyebrow">Un camino de fe · 7 días</p><h1>Oración de<br /><i>San Benito</i></h1><p className="hero-subtitle">7 días de oración, fe y protección</p><p className="hero-text">Durante los próximos 7 días, dedica un momento especial a la oración, la reflexión y el fortalecimiento de tu fe, acompañado por la inspiración espiritual de San Benito.</p><button className="gold-button" onClick={() => setScreen('member')}>Comenzar mi camino de oración <ArrowRight size={17} /></button></div>
       </section>
       <section className="faith-intro section-wrap"><div className="section-kicker">01 / El camino</div><div className="intro-grid"><h2>Un momento de<br /><i>fe y protección.</i></h2><p className="lead">Siete días para hacer una pausa, elevar tu oración y acercarte a Dios con un corazón sereno.</p></div><div className="feature-row"><Feature num="01" title="Oración diaria" text="Un espacio breve para recogerte y confiar." /><Feature num="02" title="Reflexión espiritual" text="Palabras originales para acompañar tu día." /><Feature num="03" title="A tu ritmo" text="Avanza con calma desde cualquier dispositivo." /></div></section>
