@@ -3,8 +3,8 @@ import type { Metadata, Viewport } from 'next'
 import './globals.css'
 
 export const metadata: Metadata = {
-  title: 'Frecuencia Divina 7 | Siete minutos para volver a ti',
-  description: 'Una experiencia de meditación y conexión interior de 30 días, con una práctica guiada de 7 minutos diarios.',
+  title: 'Oración de San Benito | 7 días de fe y protección',
+  description: 'Un camino de siete días de oración, fe y protección inspirado en San Benito.',
   generator: 'v0.app',
   icons: {
     icon: [
