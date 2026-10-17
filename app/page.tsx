@@ -4,7 +4,7 @@ import { useMemo, useState } from 'react'
 import { ArrowRight, Check, ChevronDown, ChevronLeft, ChevronRight, Menu, X } from 'lucide-react'
 import { PremiumYouTubePlayer } from '@/components/premium-youtube-player'
 
-const saintBenedictImage = 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/P-kB3BlqRiGSUSr8iikAaH8kjNIeLca_WB5ex_TWLMuWIY7MEs00NQBnkCAyK2P5oWBnTeRPUAqmQIo6sI9TqVP6Vv2HGn2YUpYtLrDH8-H5lGoeDio0fgKKDmNb4Hywu3C2_lK7w6WTvHBjqhOmQUHLWrYlRN9pKVYjySFtYkUFXg9pvAndT2kNsfFijUKk.jpg'
+const saintBenedictImage = 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/P-kB3BlqRiGSUSr8iikAaH8kjNIeLca_WB5ex_TWLMuWIY7MEs00NQBnkCAyK2P5oWBnTeRPUAqmQIo6sI9TqVP6Vv2HGn2YUpYtLrDH8-H5lGoeDio0fgKKDmNb4Hywu3C2_lK7w6WTvHBjqhOmQUHLWrYlRN9pKVYjySFtYkUFXg9pvAndT2kNsfFijUKk-2qeVxQoYO3xNH4q98xsD05qvn4J9WP.jpg'
 
 const days = [
   { title: 'La fe y la protección de San Benito', reflection: 'La fe no elimina todas las dificultades, pero nos ofrece una mirada serena para atravesarlas con esperanza y confianza.', prayer: 'Señor, fortalece mi fe y acompáñame con tu protección. Que, inspirado por el ejemplo de San Benito, encuentre paz, prudencia y firmeza en cada paso. Amén.', video: 'https://www.youtube.com/watch?v=qGa4_KNdiX4' },
