@@ -4,7 +4,7 @@ import { useMemo, useState } from 'react'
 import { ArrowRight, Check, ChevronDown, ChevronLeft, ChevronRight, Menu, X } from 'lucide-react'
 import { PremiumYouTubePlayer } from '@/components/premium-youtube-player'
 
-const saintBenedictImage = 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/%7B83EFDA5E-5D24-4C1E-A8EE-40185C47F96A%7D-WaE5H5X2NsaXlny9E4LL7rijdpvf8T.png'
+const saintBenedictImage = 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/P-kB3BlqRiGSUSr8iikAaH8kjNIeLca_WB5ex_TWLMuWIY7MEs00NQBnkCAyK2P5oWBnTeRPUAqmQIo6sI9TqVP6Vv2HGn2YUpYtLrDH8-H5lGoeDio0fgKKDmNb4Hywu3C2_lK7w6WTvHBjqhOmQUHLWrYlRN9pKVYjySFtYkUFXg9pvAndT2kNsfFijUKk.jpg'
 
 const days = [
   { title: 'La fe y la protección de San Benito', reflection: 'La fe no elimina todas las dificultades, pero nos ofrece una mirada serena para atravesarlas con esperanza y confianza.', prayer: 'Señor, fortalece mi fe y acompáñame con tu protección. Que, inspirado por el ejemplo de San Benito, encuentre paz, prudencia y firmeza en cada paso. Amén.', video: 'https://www.youtube.com/watch?v=qGa4_KNdiX4' },
