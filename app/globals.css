@@ -115,6 +115,43 @@
 .abundance-access { padding-top: 80px; padding-bottom: 130px; }.access-card { display: grid; grid-template-columns: 1fr .82fr; gap: 10%; margin-top: 40px; padding: clamp(28px, 5vw, 64px); border: 1px solid rgba(241,220,167,.48); background: linear-gradient(135deg, rgba(214,180,106,.1), rgba(17,27,53,.65)); box-shadow: 0 25px 70px rgba(0,0,0,.2); }.access-card h2 { margin: 0 0 24px; color: var(--warm); font: 500 clamp(34px, 5vw, 64px)/.94 Georgia, serif; letter-spacing: -.055em; }.abundance-form { display: flex; flex-direction: column; align-self: center; gap: 12px; }.abundance-form label:not(.consent-line) { color: var(--gold-light); font-size: 10px; letter-spacing: .15em; text-transform: uppercase; }.abundance-form input[type=email] { border: 1px solid rgba(241,220,167,.32); padding: 16px; color: var(--warm); background: rgba(8,13,29,.8); outline: none; }.abundance-form input[type=email]:focus { border-color: var(--gold); box-shadow: 0 0 0 3px rgba(214,180,106,.12); }.abundance-form input::placeholder { color: #778098; }.consent-line { display: flex; align-items: flex-start; gap: 9px; color: var(--muted-night); font-size: 11px; line-height: 1.45; }.consent-line input { accent-color: var(--gold); margin-top: 2px; }.abundance-form .gold-button { justify-content: center; width: 100%; margin-top: 8px; }.abundance-form small { color: #778098; font-size: 11px; line-height: 1.5; }.access-confirmation { align-self: center; border-left: 1px solid var(--gold); padding-left: 28px; }.access-confirmation > span { color: var(--gold); font-size: 28px; }.access-confirmation h3 { margin: 18px 0; color: var(--gold-light); font: 400 25px Georgia, serif; }.access-confirmation p { margin: 8px 0; }
 @media (max-width: 800px) { .abundance-nav { display: none; }.abundance-back { font-size: 9px; }.abundance-hero, .abundance-heading, .access-card { grid-template-columns: 1fr; }.abundance-hero { padding-top: 70px; padding-bottom: 80px; }.abundance-image-placeholder { order: -1; max-width: 420px; width: 100%; margin: auto; }.abundance-heading { gap: 22px; margin-bottom: 40px; }.discovery-grid { grid-template-columns: 1fr; }.discovery-card, .discovery-card:last-child { min-height: auto; margin: 0; padding: 24px 0; border-right: 0; border-bottom: 1px solid var(--line); gap: 22px; }.access-card { gap: 36px; }.access-confirmation { border-left: 0; border-top: 1px solid var(--gold); padding: 28px 0 0; } }
 
+/* Presente desbloqueável da jornada */
+.gift-book-section { margin: 54px 0 70px; }
+.gift-book-card { display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(220px, .72fr); gap: clamp(28px, 5vw, 64px); align-items: center; padding: clamp(26px, 5vw, 64px); border: 1px solid rgba(241,220,167,.3); background: linear-gradient(135deg, rgba(17,27,53,.96), rgba(8,13,29,.98)); }
+.gift-book-card.is-unlocked { border-color: rgba(214,180,106,.72); box-shadow: 0 0 48px rgba(214,180,106,.09); }
+.gift-book-copy { position: relative; }
+.gift-book-icon { display: grid; place-items: center; width: 58px; height: 58px; margin-bottom: 24px; border: 1px solid rgba(214,180,106,.6); color: var(--gold-light); }
+.gift-book-icon svg { width: 27px; height: 27px; stroke-width: 1.5; }
+.gift-book-copy h2 { margin: 18px 0 20px; color: var(--warm); font: 500 clamp(34px, 5vw, 64px)/.96 Georgia, serif; letter-spacing: -.055em; }
+.gift-book-copy h2 i { color: var(--gold-light); font-style: italic; }
+.gift-book-description, .gift-book-form-heading > p { max-width: 580px; color: var(--muted-night); font-size: 14px; line-height: 1.8; }
+.gift-book-progress { max-width: 520px; margin-top: 32px; }
+.gift-book-progress-label { display: flex; align-items: center; justify-content: space-between; gap: 16px; margin-bottom: 10px; color: var(--gold-light); font-size: 11px; letter-spacing: .12em; text-transform: uppercase; }
+.gift-book-progress-label strong { font-size: 12px; letter-spacing: .04em; }
+.gift-book-progress-track { height: 5px; overflow: hidden; background: #27304a; }
+.gift-book-progress-track span { display: block; height: 100%; background: var(--gold); transition: width .35s ease; }
+.gift-book-locked-note, .gift-book-privacy { display: flex; align-items: flex-start; gap: 10px; color: var(--muted-night); font-size: 12px; line-height: 1.7; }
+.gift-book-locked-note { margin: 18px 0 0; color: #c5b992; }
+.gift-book-locked-note svg, .gift-book-privacy svg { flex: 0 0 auto; color: var(--gold); }
+.gift-book-product { display: flex; flex-direction: column; align-items: center; gap: 14px; }
+.gift-book-product img { display: block; width: min(100%, 360px); aspect-ratio: 1 / 1; object-fit: cover; border: 1px solid rgba(214,180,106,.65); box-shadow: 0 20px 55px rgba(0,0,0,.42); }
+.gift-book-product span { color: var(--gold-light); font: 15px Georgia, serif; text-align: center; }
+.gift-book-form-area { grid-column: 1 / -1; padding-top: clamp(28px, 4vw, 52px); border-top: 1px solid var(--line); }
+.gift-book-form-heading { max-width: 680px; margin-bottom: 32px; }
+.gift-book-form-heading h3 { margin: 14px 0 10px; color: var(--warm); font: 500 clamp(32px, 4.4vw, 54px)/1 Georgia, serif; letter-spacing: -.04em; }
+.gift-book-form-heading > p { margin: 0; }
+.gift-book-form { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 22px 18px; }
+.gift-book-form label { display: flex; flex-direction: column; gap: 10px; color: var(--gold-light); font-size: 11px; letter-spacing: .12em; line-height: 1.5; text-transform: uppercase; }
+.gift-book-form input, .gift-book-form textarea { width: 100%; min-height: 54px; border: 1px solid rgba(241,220,167,.35); border-radius: 0; padding: 14px 15px; color: var(--warm); background: rgba(5,10,24,.72); font: 15px Arial, sans-serif; letter-spacing: normal; text-transform: none; }
+.gift-book-form textarea { min-height: 112px; resize: vertical; }
+.gift-book-form input:focus, .gift-book-form textarea:focus { border-color: var(--gold); outline: 2px solid rgba(214,180,106,.2); outline-offset: 1px; }
+.gift-book-form input::placeholder, .gift-book-form textarea::placeholder { color: #858da2; }
+.gift-address-field { grid-column: 1 / -1; }
+.gift-book-submit { grid-column: 1 / -1; justify-content: center; width: 100%; min-height: 60px; margin-top: 8px; }
+.gift-book-mail-note { margin: 22px 0 12px; color: #c3c9d9; font-size: 14px; line-height: 1.7; }
+.gift-book-privacy { max-width: 740px; margin: 18px 0 0; }
+@media (max-width: 760px) { .gift-book-section { margin: 30px 0 48px; }.gift-book-card { grid-template-columns: 1fr; padding: 24px 20px; gap: 30px; }.gift-book-product { order: -1; }.gift-book-product img { width: min(100%, 300px); }.gift-book-copy h2 { font-size: clamp(34px, 10vw, 48px); }.gift-book-form { grid-template-columns: 1fr; gap: 18px; }.gift-address-field, .gift-book-submit { grid-column: auto; }.gift-book-form label { font-size: 10px; } }
+
 /* Experiência premium dos vídeos */
 .app-content .practice-grid { display: none; }
 .app-content .library-section { display: none; }
