@@ -176,6 +176,9 @@
 .video-links-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
 .video-link-card { align-items: stretch; justify-content: space-between; min-height: 132px; border-radius: 12px; }
 .video-link-card > div { min-width: 0; }
+.video-link-day-status { display: flex; align-items: center; gap: 10px; }
+.video-link-card .video-link-day { color: var(--gold); font-size: 10px; letter-spacing: .12em; }
+.video-link-card .video-link-complete { display: inline-flex; align-items: center; gap: 4px; padding: 3px 7px; border: 1px solid rgba(241,220,167,.38); border-radius: 999px; color: var(--gold-light); font-size: 9px; letter-spacing: .06em; }
 .video-link-card h3 { margin: 8px 0 4px; color: var(--warm); font: 400 18px/1.15 Georgia, serif; }
 .video-link-card p { margin: 0; color: var(--muted-night); font-size: 12px; }
 .video-link-card.is-selected { border-color: var(--gold); background: rgba(214,180,106,.14); }
